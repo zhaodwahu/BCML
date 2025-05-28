@@ -1,5 +1,5 @@
 
-function [model_LVSL] = BCML( X_set, Y, optmParameter)
+function [model_BCML] = BCML( X_set, Y, optmParameter)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -100,12 +100,12 @@ function [model_LVSL] = BCML( X_set, Y, optmParameter)
         iter=iter+1;
     end 
             %% return values
-            model_LVSL.W = W;
-            model_LVSL.K = Ktr;
-            model_LVSL.theta = alpha;
-            model_LVSL.kernel_para = kernel_para;
-            model_LVSL.kernel_type = kernel_type;
-            model_LVSL.loss=iterVal;
+            model_BCML.W = W;
+            model_BCML.K = Ktr;
+            model_BCML.theta = alpha;
+            model_BCML.kernel_para = kernel_para;
+            model_BCML.kernel_type = kernel_type;
+            model_BCML.loss=iterVal;
 
 end
 function C=updateC(C_t,Ytrain,F,lambda1,k1)
